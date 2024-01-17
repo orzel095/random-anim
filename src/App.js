@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import "./App.css";
 import Main from "./views/Main";
@@ -37,16 +37,6 @@ const SwitchWrapper = styled.div`
 function App() {
   const [selectedNumber, setSelectedNumber] = useState("");
   const [color, setColor] = useState("black");
-  const [colors, setColors] = useState([]);
-  const [variable, setVariables] = useState();
-
-  useEffect(() => {
-    let coloors = [];
-    coloors.push("red");
-    coloors.push("green");
-    coloors.push("blue");
-    setColors(coloors);
-  }, []);
 
   return (
     <Wrapper color={color}>
@@ -54,9 +44,9 @@ function App() {
         <>
           <SwitchWrapper>
             <select onChange={(e) => setColor(e.target.value)}>
-              <option>Black</option>
-              <option>Orange</option>
-              <option>Blue</option>
+              <option>black</option>
+              <option>oragne</option>
+              <option>blue</option>
             </select>
           </SwitchWrapper>
           <Main color={color} setSelectedNumber={setSelectedNumber} />
