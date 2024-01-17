@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   /* background-image: url("https://content-eu-live-global.prod.marketing.bat.net/media/entryageverification/stores/30/Glo-YAP_desktop-02_1.jpg");
   background-position: center;
   background-size: cover; */
-  background-color: #F0F8FF;
+  background-color: #f0f8ff;
   color: ${({ color }) => color} !important;
   display: flex;
   align-items: center;
@@ -43,9 +43,9 @@ function App() {
       {!selectedNumber ? (
         <>
           <SwitchWrapper>
-            <select onChange={e => setColor(e.target.value)}>
-              <option>Black</option>
-              <option>Orange</option>
+            <select onChange={(e) => setColor(e.target.value)}>
+              <option>black</option>
+              <option>oragne</option>
               <option>Blue</option>
             </select>
           </SwitchWrapper>
