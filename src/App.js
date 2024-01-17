@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import "./App.css";
 import Main from "./views/Main";
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   /* background-image: url("https://content-eu-live-global.prod.marketing.bat.net/media/entryageverification/stores/30/Glo-YAP_desktop-02_1.jpg");
   background-position: center;
   background-size: cover; */
-  background-color: #F0F8FF;
+  background-color: #f0f8ff;
   color: ${({ color }) => color} !important;
   display: flex;
   align-items: center;
@@ -37,13 +37,23 @@ const SwitchWrapper = styled.div`
 function App() {
   const [selectedNumber, setSelectedNumber] = useState("");
   const [color, setColor] = useState("black");
+  const [colors, setColors] = useState([]);
+  const [variable, setVariables] = useState();
+
+  useEffect(() => {
+    let coloors = [];
+    coloors.push("red");
+    coloors.push("green");
+    coloors.push("blue");
+    setColors(coloors);
+  }, []);
 
   return (
     <Wrapper color={color}>
       {!selectedNumber ? (
         <>
           <SwitchWrapper>
-            <select onChange={e => setColor(e.target.value)}>
+            <select onChange={(e) => setColor(e.target.value)}>
               <option>Black</option>
               <option>Orange</option>
               <option>Blue</option>
