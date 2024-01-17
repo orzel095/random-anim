@@ -46,7 +46,7 @@ function App() {
             <select onChange={(e) => setColor(e.target.value)}>
               <option>black</option>
               <option>oragne</option>
-              <option>blue</option>
+              <option>Blue</option>
             </select>
           </SwitchWrapper>
           <Main color={color} setSelectedNumber={setSelectedNumber} />
